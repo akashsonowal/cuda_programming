@@ -14,7 +14,7 @@ int main(){ // cpu that runs cuda kernel
     }
 
     add<<<1, 256>>>(vector_a, vector_b, vector_c); // <<<Blocks, Threads per block>>> cuda kernel call
-    cudaDeviceSynchronize();
+    cudaDeviceSynchronize(); // waiting for all threads to complete
 
     int result_sum = 0;
 
